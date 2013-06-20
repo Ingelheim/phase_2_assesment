@@ -1,4 +1,7 @@
 get '/' do
-  # Look in app/views/index.erb
+  if user = current_user
+    redirect "/home/#{user.id}"
+  else
   erb :index
+end
 end

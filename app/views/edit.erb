@@ -1,0 +1,12 @@
+<h1><u>Edit your Event: <%= @event.name %></u></h1>
+<div class="signup">
+<form action="/edit" method="post" enctype="multipart/form-data">
+    Eventname: <input type="text" name="event[name]" placeholder="Eventname" autofocus required=true value="<%= @event.name %>"><br>
+    Eventlocation: <input type="text" name="event[location]" placeholder="Eventlocation" required=true value="<%= @event.location %>"><br>
+    Starttime: <input type="text" name="event[starts_at]" placeholder="Starttime" required=true value="2011-04-12 00:30:00 -0500" value="<%= @event.starts_at %>"><br>
+    Endtime: <input type="text" name="event[ends_at]" placeholder="Endtime" required=true value="2011-04-12 00:30:00 -0500" value="<%= @event.ends_at %>"><br>
+    <input type="hidden" name="event[user_id]" required=true value="<%= current_user.id%>"><br>
+    <input type="hidden" name="event_id" required=true value="<%= @event.id %>"><br>
+    <input type="submit" value="Update event">
+</form>
+</div>

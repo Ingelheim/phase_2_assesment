@@ -1,0 +1,26 @@
+<div class="event_table">
+  <table border="1">
+    <tr>
+      <th>Eventname</th>
+      <th>Eventlocation</th>
+      <th>Starttime</th>
+      <th>Endtime</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+
+    <% current_user.created_events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.starts_at %></td>
+        <td><%= event.ends_at %></td>
+        <td><a href="/edit/<%=event.id%>">Edit event</a></td>
+        <td><a href="/delete/<%=event.id%>">Delete event</a></td>
+      </tr>
+    <% end %>
+  </table>
+  <button><a class="click" href="/create">Create new event</a></button>
+</div>  
+
+

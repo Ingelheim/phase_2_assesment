@@ -1,0 +1,12 @@
+<h1><u>Create a new Event</u></h1>
+<div class="signup">
+  <form class="input_form" action="/create" method="post" enctype="multipart/form-data">
+      Eventname: <input type="text" name="event[name]" placeholder="Eventname" autofocus required=true><br>
+      Eventlocation: <input type="text" name="event[location]" placeholder="Eventlocation" required=true><br>
+      Starttime: <input type="text" name="event[starts_at]" placeholder="Starttime" required=true value="2011-04-12 00:30:00 -0500"><br>
+      Endtime: <input type="text" name="event[ends_at]" placeholder="Endtime" required=true value="2011-04-12 00:30:00 -0500"><br>
+      <input type="hidden" name="event[user_id]" required=true value="<%= current_user.id%>"><br>
+      <input class="button" id="create_event" type="submit" value="Create event">
+  </form>
+</div>
+
